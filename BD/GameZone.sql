@@ -56,11 +56,11 @@ CREATE TABLE IF NOT EXISTS `VENTA` (
 );
 
 CREATE TABLE IF NOT EXISTS `DETALLE_VENTA` (
-    `id_venta` INT(9) NOT NULL,
-    `id_producto` VARCHAR(9) NOT NULL,
-    `Cantidad` INT NOT NULL,
+    `id_venta`        INT(9) NOT NULL,
+    `id_producto`     VARCHAR(9) NOT NULL,    
+    `Cantidad`        INT NOT NULL,
     `Precio_unitario` DECIMAL(7, 2) NOT NULL DEFAULT 0.00,
-    PRIMARY KEY (`id_venta`, `id_producto`)
+    PRIMARY KEY (`id_venta`, `id_producto`)   
 );
 
 
@@ -75,13 +75,13 @@ ALTER TABLE `PRODUCTO`
 ALTER TABLE `VENTA`
     ADD CONSTRAINT `fk_VENTA_id_cliente`
     FOREIGN KEY (`id_cliente`) REFERENCES `CLIENTE` (`DNI`)
-    ON DELETE RESTRICT   -
+    ON DELETE RESTRICT   
     ON UPDATE CASCADE;
 
 ALTER TABLE `VENTA`
     ADD CONSTRAINT `fk_VENTA_id_empleado`
     FOREIGN KEY (`id_empleado`) REFERENCES `EMPLEADO` (`id`)
-    ON DELETE RESTRICT   L
+    ON DELETE RESTRICT   
     ON UPDATE CASCADE;
 
 ALTER TABLE `DETALLE_VENTA`
@@ -92,6 +92,6 @@ ALTER TABLE `DETALLE_VENTA`
 
 ALTER TABLE `DETALLE_VENTA`
     ADD CONSTRAINT `fk_DETALLE_VENTA_id_producto`
-    FOREIGN KEY (`id_producto`) REFERENCES `PRODUCTO` (`id`)
+    FOREIGN KEY (`id_producto`) REFERENCES `PRODUCTO` (`id`)   
     ON DELETE RESTRICT
     ON UPDATE CASCADE;

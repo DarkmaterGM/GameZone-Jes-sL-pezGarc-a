@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Producto {
 
-	private int id;
+	private String id;
 	private String nombre;
 	private String plataforma;
 	private int id_categoria;
@@ -12,7 +12,7 @@ public class Producto {
 	private int stock;
 	private Date fecha_lanzamiento;
 	//Constructor
-	public Producto(int id, String nombre, String plataforma, int id_categoria, double precio, int stock,
+	public Producto(String id, String nombre, String plataforma, int id_categoria, double precio, int stock,
 			Date fecha_lanzamiento) {
 		super();
 		this.id = id;
@@ -25,10 +25,10 @@ public class Producto {
 	}
 	
 	//Getters y Setters
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getNombre() {
@@ -67,7 +67,7 @@ public class Producto {
 	public void setFecha_lanzamiento(Date fecha_lanzamiento) {
 		this.fecha_lanzamiento = fecha_lanzamiento;
 	}
-	
+
 	//toString
 	@Override
 	public String toString() {
@@ -75,7 +75,6 @@ public class Producto {
 				+ id_categoria + ", precio=" + precio + ", stock=" + stock + ", fecha_lanzamiento=" + fecha_lanzamiento
 				+ "]";
 	}
-	
 	
 	
 }
